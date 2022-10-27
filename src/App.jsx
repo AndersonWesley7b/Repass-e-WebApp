@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import RoutesJs from './Routes/RoutesJs'
 import 'antd/dist/antd.css'
-import  Nav  from './Components/Nav/Nav'
+import LayoutDefault from './Components/Layout/LayoutDefault'
 
 function App() {
 
 
   return (
     <div>
-      <Nav />
+      <LayoutDefault>
+        <RoutesJs />
+      </LayoutDefault>
     </div>
   )
 }
