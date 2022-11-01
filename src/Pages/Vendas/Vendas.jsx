@@ -1,13 +1,19 @@
+import { PageHeader, Card, Row } from 'antd'
 function Vendas() {
   return (
     <>
-      <h1>teste</h1>
-      <br />
-      <h1>teste</h1>
-      <br />
-      <h1>teste</h1>
-      <br />
-      <h1>teste</h1>
+      <PageHeader
+        className='site-page-header'
+        onBack={() => window.history.back()}
+        title="Venda de Ingresso"
+        subTitle="Coloque seu ingresso a venda" />
+        <Card>
+          <Row>
+
+          </Row>
+        </Card>
+
+
     </>
   )
 }

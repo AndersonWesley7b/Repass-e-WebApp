@@ -1,11 +1,13 @@
-import { Menu, Affix } from "antd"
+import { Menu, Affix, Row, Col } from "antd"
 import {
   HomeOutlined,
   FireOutlined,
   DribbbleCircleFilled,
-  DollarOutlined
+  DollarOutlined,
+  PlusCircleFilled
 } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
+import RepasseLogo from '../../assets/RepasseIcon2.svg'
 
 function Nav() {
   const navigate = useNavigate();
@@ -13,7 +15,8 @@ function Nav() {
     { label: 'Home', key: '/Home', icon: <HomeOutlined /> },
     {
       label: 'Eventos', key: '/Eventos', icon: <FireOutlined />,
-      children: [{
+      children: [{label:'Criar novo evento', key:'AddEvento', icon:<PlusCircleFilled />}
+        ,{
         label: 'Esportes', key: '/Eventos-Esportes', icon: <DribbbleCircleFilled />, link: '',
         children: [{ label: 'Futebol', key: '/Eventos-Esportes-Futebol' },
         { label: 'Basquete', key: '/Eventos-Esportes-Basquete' },
@@ -27,9 +30,16 @@ function Nav() {
   return (
     <>
       <Affix offsetTop={5}>
-        <Menu mode="horizontal" onClick={({ key }) => {
-          navigate(key);
-        }} items={items} style={{ display: 'flex', justifyContent: 'center', fontSize: '17px', height: '55px' }} />
+        <Row style={{ marginTop: '0px' }}>
+          <Col>
+            <img src={RepasseLogo} style={{ width: '200px', position: 'relative', bottom: '70px', marginRight: '200px' }} />
+          </Col>
+          <Col>
+            <Menu mode="horizontal" onClick={({ key }) => {
+              navigate(key);
+            }} items={items} />
+          </Col>
+        </Row>
       </Affix>
     </>
   )
